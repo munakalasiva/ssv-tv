@@ -103,7 +103,7 @@ const brands = [
 
 
 <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden">
-  {/* 🎬 Background Video */}
+  {/* Background Video */}
   <video
     autoPlay
     loop
@@ -114,70 +114,71 @@ const brands = [
     <source src={ssvvideo} type="video/mp4" />
   </video>
 
-  {/* 🌓 Dark Overlay */}
-  <div className="absolute inset-0 bg-black/30"></div>
+  {/* Dark Overlay - Shiftwave Style */}
+  <div className="absolute inset-0 bg-black/50"></div>
 
-  {/* 💬 Content */}
-  <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      {/* Left Side Text */}
-      <div className="text-white">
-<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-  Expert TV Repairs with Reliable Warranty Support
-</h1>
-<p className="text-lg sm:text-xl md:text-2xl mb-10 text-blue-100">
-  Fast, affordable, and warranty-backed repair services for all TV brands — handled by certified professionals.
-</p>
+  {/* Content Container - Max Width 1250px */}
+  <div className="relative z-10 w-full container mx-auto px-4 md:px-8 py-12 md:py-16">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      {/* Left Side - Text Content (Center-Left on Desktop) */}
+      <motion.div 
+        className="text-white text-center lg:text-left"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="font-bold mb-6 leading-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+          Expert TV Repairs with Reliable Warranty Support
+        </h1>
+        <p className="mb-8 md:mb-10 text-gray-100 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
+          Fast, affordable, and warranty-backed repair services for all TV brands — handled by certified professionals.
+        </p>
 
+        {/* Buttons - Stack on Mobile */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <button
+            onClick={handleBooking}
+            className="bg-[#D71920] text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:bg-[#B01519] hover:scale-105 transition-all duration-300"
+          >
+            Book a Repair
+          </button>
+          <button
+            onClick={() => navigate("/services")}
+            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-[#D71920] transition-all duration-300"
+          >
+            Our Services →
+          </button>
+        </div>
+      </motion.div>
 
-        <button
-          onClick={handleBooking}
-          className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-red-700 hover:scale-105 transition-all inline-flex items-center gap-2"
-        >
-          Book a Repair 
-        </button>
-
-                <button
-          onClick={()=>navigate("/services")}
-          className="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-red-700 hover:scale-105 transition-all inline-flex items-center gap-2 ml-5"
-        >
-          Our Services →
-        </button>
-      </div>
-
-      {/* Right Side Cards */}
-      <div className="flex flex-col gap-4 items-end text-center">
-        {stats.map((feature, index) => (
-<div
-  key={index}
-  className="w-full sm:w-72 md:w-80 rounded-lg p-6 shadow-xl transition-all cursor-pointer"
-  style={{
-    border: "1.5px solid var(--theme-red-dark)",
-    background: "var(--theme-red-tnspt)",
-    borderRadius: "8px",
-    animation: `fadeInUp 0.5s ease-out ${0.3 + index * 0.1}s both`,
-  }}
->
-  <h3 className="text-4xl sm:text-5xl font-bold text-white mb-2">
-    {feature.value}
-  </h3>
-  <p className="text-white text-base sm:text-lg font-normal">
-    {feature.label}
-  </p>
-</div>
-
-
-
+      {/* Right Side - Statistics Cards (Desktop Only) */}
+      <div className="hidden lg:flex flex-col gap-4 items-end">
+        {stats.map((stat, index) => (
+          <motion.div
+            key={index}
+            className="w-full max-w-sm bg-[#D71920] rounded-xl p-6 shadow-xl text-center hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+          >
+            <h3 className="text-5xl font-bold text-white mb-2">
+              {stat.value}
+            </h3>
+            <p className="text-white text-lg font-medium">
+              {stat.label}
+            </p>
+          </motion.div>
         ))}
       </div>
     </div>
   </div>
 
-  {/* Fade to White Bottom Gradient */}
-  {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div> */}
-
-  {/* Fade Animation */}
   <style>{`
+    .container {
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+    
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -189,6 +190,31 @@ const brands = [
       }
     }
   `}</style>
+</section>
+
+{/* Mobile Statistics Section - Below Hero */}
+<section className="lg:hidden bg-white py-8 px-4">
+  <div className="container mx-auto">
+    <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+      {stats.map((stat, index) => (
+        <motion.div
+          key={index}
+          className="bg-[#D71920] rounded-xl p-6 shadow-lg text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <h3 className="text-4xl font-bold text-white mb-2">
+            {stat.value}
+          </h3>
+          <p className="text-white text-sm font-medium">
+            {stat.label}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
 </section>
 
 

@@ -1,8 +1,12 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --theme-red-dark: #b91c1c; /* dark red tone */
-  --theme-red-tnspt: rgba(185, 28, 28, 0.75); /* semi-transparent red */
+  --theme-red-primary: #D71920; /* Primary Red - Shiftwave style */
+  --theme-red-dark: #B01519; /* Darker shade for hover */
+  --theme-navy: #001F3F; /* Secondary Navy */
+  --theme-red-tnspt: rgba(215, 25, 32, 0.75); /* semi-transparent red */
+  --theme-light-gray: #F4F4F4; /* Light gray for hover states */
 }
 
 
@@ -11,7 +15,7 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

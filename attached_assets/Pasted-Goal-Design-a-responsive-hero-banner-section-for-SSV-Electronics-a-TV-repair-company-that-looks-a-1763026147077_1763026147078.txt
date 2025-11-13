@@ -1,0 +1,96 @@
+Goal:
+Design a responsive hero banner section for SSV Electronics (a TV repair company) that looks and behaves exactly like the hero section of Shiftwave.com.
+
+Desktop Layout:
+
+Use a max-width of 1250px container (.container { max-width: 1250px; margin: 0 auto; }).
+
+Background: auto-playing video (TV technician repairing a TV) that covers full width and height, with dark overlay for text visibility (rgba(0,0,0,0.5)).
+
+Overlay content (center-left):
+
+Main heading: “Expert TV Repairs with Reliable Warranty Support”
+
+Subtext: “Fast, affordable, and warranty-backed repair services for all TV brands — handled by certified professionals.”
+
+Two buttons:
+
+Primary (Red): “Book a Repair”
+
+Secondary (Outline): “Our Services →”
+
+Right side: 4 vertically stacked red statistic cards, similar to Shiftwave’s:
+
+10+ Years Experience
+
+5000+ Happy Customers
+
+100% Satisfaction Rate
+
+50+ Areas Covered
+
+Each card should have:
+
+Background: solid red (#D71920)
+
+Text: white, bold, centered
+
+Border radius: 12px
+
+Soft box-shadow
+
+Mobile Layout (Key Requirement):
+
+The hero section must look exactly like Shiftwave.com mobile view:
+
+The video background should scale and crop intelligently (use object-fit: cover;) and maintain aspect ratio.
+
+Text should move on top of the video, centered, with adequate padding.
+
+Buttons should stack vertically below the text.
+
+The red statistic cards should appear below the hero video, in a full-width horizontal scroll or stacked vertically (auto-adjusting).
+
+The cards should have consistent spacing and responsive font sizes.
+
+All text and elements should remain readable and visually balanced.
+
+Use fluid typography (e.g., clamp(1.5rem, 4vw, 2.5rem)) for headings.
+
+Add smooth entrance animations like Shiftwave (fade-in or slide-up).
+
+Additional Requirements:
+
+Apply padding:
+
+Desktop: padding: 0 2rem;
+
+Mobile: padding: 0 1rem;
+
+Navbar and “Book a Repair” button styling should match Shiftwave’s red tone and rounded corners.
+
+Maintain clean white spacing and subtle drop shadows.
+
+Floating social icons on the right side (Facebook, Instagram, WhatsApp) that stay visible.
+
+Use font family: “Poppins” or “Inter”.
+
+Color Palette:
+
+Primary Red: #D71920
+
+Secondary Navy: #001F3F
+
+White Text: #FFFFFF
+
+Light Gray for hover states: #F4F4F4
+
+Deliverables:
+
+Fully responsive hero section (desktop + tablet + mobile).
+
+Video background with proper scaling and overlay.
+
+Adaptive typography and spacing.
+
+Modern and minimal look identical to Shiftwave’s hero banner.
