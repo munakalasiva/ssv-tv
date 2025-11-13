@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --theme-red-dark: #b91c1c; /* dark red tone */
+  --theme-red-tnspt: rgba(185, 28, 28, 0.75); /* semi-transparent red */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #2563eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: 2px solid #2563eb;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #eff6ff;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(30, 58, 138, 0.6); /* blue-900 shadow by default */
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: none; /* remove shadow on hover */
+  transform: scale(1.05);
+}
+
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.container{
+   align-items: end;
+
+
+}
