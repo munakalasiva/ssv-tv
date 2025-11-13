@@ -102,23 +102,25 @@ const brands = [
 
 
 
-<section className="relative w-full min-h-[90vh] flex items-center overflow-hidden">
-  {/* Background Video */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    <source src={ssvvideo} type="video/mp4" />
-  </video>
+<section className="w-full py-8 px-4 md:px-8 bg-white">
+  <div className="container mx-auto">
+    <div className="relative w-full min-h-[85vh] flex items-center overflow-hidden rounded-3xl">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover rounded-3xl"
+      >
+        <source src={ssvvideo} type="video/mp4" />
+      </video>
 
-  {/* Dark Overlay - Shiftwave Style */}
-  <div className="absolute inset-0 bg-black/50"></div>
+      {/* Dark Overlay - Shiftwave Style */}
+      <div className="absolute inset-0 bg-black/50 rounded-3xl"></div>
 
-  {/* Content Container - Max Width 1250px */}
-  <div className="relative z-10 w-full container mx-auto px-4 md:px-8 py-12 md:py-16">
+      {/* Content Container - Max Width 1250px */}
+      <div className="relative z-10 w-full px-6 md:px-12 py-12 md:py-16">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
       {/* Left Side - Text Content (Center-Left on Desktop) */}
       <motion.div 
@@ -171,6 +173,8 @@ const brands = [
         ))}
       </div>
     </div>
+    </div>
+  </div>
   </div>
 
   <style>{`
