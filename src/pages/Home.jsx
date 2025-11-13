@@ -156,7 +156,7 @@ const brands = [
         {stats.map((stat, index) => (
           <motion.div
             key={index}
-            className="w-full max-w-sm bg-[#D71920] rounded-xl p-6 shadow-xl text-center hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            className="w-full max-w-sm bg-[#D71920]/75 backdrop-blur-sm rounded-xl p-6 shadow-xl text-center hover:shadow-2xl hover:bg-[#D71920]/85 transition-all duration-300 hover:scale-105 border border-white/20"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
@@ -199,7 +199,7 @@ const brands = [
       {stats.map((stat, index) => (
         <motion.div
           key={index}
-          className="bg-[#D71920] rounded-xl p-6 shadow-lg text-center"
+          className="bg-[#D71920]/90 backdrop-blur-sm rounded-xl p-6 shadow-lg text-center border border-white/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
