@@ -8,6 +8,7 @@ import {
   FiInstagram,
   FiMonitor,
 } from "react-icons/fi";
+import ssv_logo from "../assets/ssv-logos-removebg-preview.png";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,10 +20,9 @@ function Footer() {
           {/* Brand Section */}
           <div>
             <div className="flex items-center space-x-2 mb-5">
-              <FiMonitor className="text-blue-400 text-3xl" />
-              <span className="text-xl font-semibold tracking-wide">
-                TV Repair Services
-              </span>
+                     <div className="flex items-center">
+                         <img src={ssv_logo} alt="ssv_logo" className="h-[80px] w-auto" />
+                       </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Fast, reliable, and affordable TV repair solutions at your doorstep. 

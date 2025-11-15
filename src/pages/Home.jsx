@@ -5,6 +5,7 @@ import { FiClock, FiTool,FiUsers, FiSettings, FiDollarSign,FiShield,FiPhone,FiMa
 import { Clock, Users, Settings, DollarSign, Sparkles,Phone, MapPin} from 'lucide-react';
 import TestimonialCard from '../components/TestimonialCard';
 import ssvvideo from "../assets/ssv_video.mp4";
+import GalleryCard from "../components/GalleryCard"
 
 // import ssvvideo from "../assets/ssv_video.mp4";
 import ssvImg from "../assets/ssv.jpg"; 
@@ -18,6 +19,15 @@ import bpl from "../assets/BPL_Logo.svg.png";
 import oneplus from "../assets/oneplus-logo-png-transparent.png";
 import vu from "../assets/Vu_Televisions.png";
 import tcl from "../assets/tcl_logo.png"
+
+
+//* gallery photos
+import gry1 from "../assets/IMG20251114114227.jpg"
+import gry2 from "../assets/IMG20251114114656.jpg"
+import gry3 from "../assets/IMG20251114114845.jpg"
+import gry5 from "../assets/IMG20251114120224.jpg"
+import gry4 from "../assets/IMG20251114114946.jpg"
+import gry6 from "../assets/IMG20251114115008.jpg"
 
 function Home() {
   const navigate = useNavigate();
@@ -76,7 +86,7 @@ const brands = [
       location: 'Visakhapatnam',
     },
     {
-      name: 'Priya Singh',
+      name: 'Priya kumari',
       rating: 5,
       review: 'Best TV repair service in Vizag. Quick response and genuine parts used. Highly recommended!',
       location: 'MVP Colony',
@@ -94,6 +104,39 @@ const brands = [
     { value: '5000+', label: 'Happy Customers' },
     { value: '100%', label: 'Satisfaction Rate' },
     { value: '50+', label: 'Areas Covered' },
+  ];
+
+    const galleryItems = [
+    {
+      image: gry1,
+      title: 'LED TV Screen Replacement',
+      description: 'Professional screen replacement service for all LED TV brands'
+    },
+    {
+      image: gry2,
+      title: 'Smart TV Software Update',
+      description: 'Firmware updates and smart TV troubleshooting'
+    },
+    {
+      image:gry3,
+      title: 'Power Supply Repair',
+      description: 'Expert repair of TV power boards and components'
+    },
+    {
+      image: gry4,
+      title: 'HDMI Port Replacement',
+      description: 'Fix damaged HDMI ports and connectivity issues'
+    },
+    {
+      image: gry5,
+      title: 'TV Mounting Service',
+      description: 'Professional wall mounting and setup services'
+    },
+    {
+      image: gry6,
+      title: 'Home Theater Setup',
+      description: 'Complete home entertainment system installation'
+    }
   ];
 
   return (
@@ -412,7 +455,7 @@ const brands = [
       `}</style>
     </section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fff1db]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -442,6 +485,40 @@ const brands = [
           </div>
         </div>
       </section>
+
+          <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#f8f8ff]">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {/* Our TV Repair Services */}
+            Gallery
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Professional repair work captured in action
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {galleryItems.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <GalleryCard {...item} />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center">

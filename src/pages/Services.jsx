@@ -83,67 +83,10 @@ function Services() {
         </div>
       </section>
 
-      {/* <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-50">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Why Choose Our Repair Services?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Free Diagnosis</h3>
-                  <p className="text-gray-600">We diagnose the issue at no cost before repair</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Same Day Service</h3>
-                  <p className="text-gray-600">Most repairs completed within 24 hours</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Warranty Included</h3>
-                  <p className="text-gray-600">All repairs come with service warranty</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Doorstep Service</h3>
-                  <p className="text-gray-600">We come to your location for convenience</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section> */}
+
 
           <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
-        {/* Animated background elements */}
-        {/* <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-        </div> */}
+
 
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
