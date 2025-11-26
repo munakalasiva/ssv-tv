@@ -13,6 +13,8 @@ function Navbar() {
     { name: 'Warranty', path: '/warranty' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Blogs', path: '/blogs' },
+
   ];
 
   const isActive = (path) => location.pathname === path;

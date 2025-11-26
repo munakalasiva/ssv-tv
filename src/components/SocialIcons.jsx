@@ -2,8 +2,8 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function SocialIcons() {
   const socialLinks = {
-    facebook: 'https://facebook.com/ssvelectronics',
-    instagram: 'https://instagram.com/ssvelectronics',
+    facebook: 'https://www.facebook.com/profile.php?id=61584061136849',
+    instagram: 'https://www.instagram.com/ssvelectronicsvizag',
     whatsapp: {
       number: '919291488856',
       message: 'Hello! I need help with TV repair.'

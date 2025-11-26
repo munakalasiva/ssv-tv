@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiXCircle, FiSearch } from 'react-icons/fi';
+import warranty from "../assets/warranty.png";
+import Contact from "../components/Contact";
+
+
 
 function Warranty() {
   const [warrantyId, setWarrantyId] = useState('');
@@ -51,23 +55,24 @@ function Warranty() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="bg-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+<section
+  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+  style={{ backgroundImage: `url(${warranty})` }}
+>
+  <div className="absolute inset-0 bg-black/40"></div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Warranty Services</h1>
-            <p className="text-xl text-blue-100">
-              Check your warranty status or access manufacturer warranty information
-            </p>
-          </motion.div>
-        </div>
-      </section>
+  <div className="relative z-10 text-center text-white px-4">
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">
+      Warranty Services
+    </h1>
+    <p className="text-lg md:text-xl">
+  Check your warranty status or access manufacturer warranty information
+    </p>
+  </div>
+</section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fbf1e0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <motion.div
@@ -96,7 +101,7 @@ function Warranty() {
                       value={warrantyId}
                       onChange={(e) => setWarrantyId(e.target.value)}
                       placeholder="Enter Warranty ID (e.g., WRN-TV-2025-0123)"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <FiSearch className="absolute right-3 top-3.5 text-gray-400" size={20} />
                   </div>
@@ -105,10 +110,35 @@ function Warranty() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-blue-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#093f74] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b11823] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? 'Checking...' : 'Check Warranty'}
                 </button>
+               <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+  <h3 className="font-semibold text-gray-900 mb-3">
+    Benefits of Warranty
+  </h3>
+  <ul className="space-y-2 text-sm text-gray-700">
+    <li className="flex items-start">
+      <span className="text-blue-600 mr-2">•</span>
+      <span>Instantly verify if your repair warranty is active</span>
+    </li>
+    <li className="flex items-start">
+      <span className="text-blue-600 mr-2">•</span>
+      <span>Know the exact expiry date of your service warranty</span>
+    </li>
+    <li className="flex items-start">
+      <span className="text-blue-600 mr-2">•</span>
+      <span>Avoid unexpected repair charges with coverage confirmation</span>
+    </li>
+    <li className="flex items-start">
+      <span className="text-blue-600 mr-2">•</span>
+      <span>Get faster support with verified warranty details</span>
+    </li>
+  </ul>
+</div>
+
+                
               </form>
 
               {warrantyResult && (
@@ -196,7 +226,7 @@ function Warranty() {
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
                     <option value="">-- Choose a Brand --</option>
                     <option value="lg">LG</option>
@@ -210,7 +240,7 @@ function Warranty() {
 
                 <button
                   onClick={handleBrandWarranty}
-                  className="w-full bg-blue-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300"
+                  className="w-full bg-[#093f74] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#b11823] transition-all duration-300"
                 >
                   Go to Warranty Site
                 </button>
@@ -244,17 +274,10 @@ function Warranty() {
         </div>
       </section>
 
-      
+<Contact/>      
 
 
-
-
-
-
-
-
-
-    </div>
+ </div>
   );
 }
 

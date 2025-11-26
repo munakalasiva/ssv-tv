@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle } from 'react-icons/fi';
+import contactBg from "../assets/contactus.png";
+
+import API from "../api"; 
 
 function Booking() {
   const [formData, setFormData] = useState({
@@ -13,7 +16,7 @@ function Booking() {
     time: '',
     file: null,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(false);  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,41 +33,94 @@ function Booking() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Data:', formData);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('Form Data:', formData);
+  //   setSubmitted(true);
+  //   setTimeout(() => {
+  //     setSubmitted(false);
+  //     setFormData({
+  //       name: '',
+  //       phone: '',
+  //       address: '',
+  //       tvBrand: '',
+  //       problemType: '',
+  //       date: '',
+  //       time: '',
+  //       file: null,
+  //     });
+  //   }, 3000);
+  // };
+
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("phone", formData.phone);
+    data.append("address", formData.address);
+    data.append("tvBrand", formData.tvBrand);
+    data.append("problemType", formData.problemType);
+    data.append("date", formData.date);
+    data.append("time", formData.time);
+
+    if (formData.file) {
+      data.append("photo", formData.file);
+    }
+
+    await API.post("/bookings", data, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
     setSubmitted(true);
+
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
-        name: '',
-        phone: '',
-        address: '',
-        tvBrand: '',
-        problemType: '',
-        date: '',
-        time: '',
+        name: "",
+        phone: "",
+        address: "",
+        tvBrand: "",
+        problemType: "",
+        date: "",
+        time: "",
         file: null,
       });
     }, 3000);
-  };
+  } catch (error) {
+    console.error("Booking API Error:", error);
+    alert("Something went wrong! Try again.");
+  }
+};
+
+
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="bg-blue-900 text-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Repair</h1>
-            <p className="text-xl text-blue-100">
-              Fill out the form below and our team will contact you shortly
-            </p>
-          </motion.div>
-        </div>
-      </section>
+     
+    <section
+  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+  style={{ backgroundImage: `url(${contactBg})` }}
+>
+  <div className="absolute inset-0 bg-black/40"></div>
+
+  <div className="relative z-10 text-center text-white px-4">
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">
+      Book a Repair
+    </h1>
+    <p className="text-lg md:text-xl">
+      Fill out the form below and our team will contact you shortly
+    </p>
+  </div>
+</section>
+
+
+
 
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
@@ -90,7 +146,7 @@ function Booking() {
               transition={{ duration: 0.6 }}
               className="card"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              <h2 className="text-3xl font-bold text-[#0A2540] mb-6 text-center">
                 Repair Booking Form
               </h2>
 
@@ -106,7 +162,7 @@ function Booking() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -122,7 +178,7 @@ function Booking() {
                       onChange={handleChange}
                       required
                       pattern="[0-9]{10}"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="10-digit mobile number"
                     />
                   </div>
@@ -138,7 +194,7 @@ function Booking() {
                     onChange={handleChange}
                     required
                     rows="3"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Enter your complete address"
                   />
                 </div>
@@ -153,7 +209,7 @@ function Booking() {
                       value={formData.tvBrand}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="">Select Brand</option>
                       <option value="samsung">Samsung</option>
@@ -177,7 +233,7 @@ function Booking() {
                       value={formData.problemType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="">Select Problem</option>
                       <option value="power">Power Issue</option>
@@ -202,7 +258,7 @@ function Booking() {
                       onChange={handleChange}
                       required
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
 
@@ -215,7 +271,7 @@ function Booking() {
                       value={formData.time}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     >
                       <option value="">Select Time</option>
                       <option value="morning">Morning (9 AM - 12 PM)</option>
@@ -232,8 +288,9 @@ function Booking() {
                   <input
                     type="file"
                     accept="image/*"
+                     name="photo" 
                     onChange={handleFileChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                   <p className="text-xs text-gray-500 mt-1">
                     Upload a photo of the issue for better diagnosis
@@ -242,7 +299,7 @@ function Booking() {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-900 text-white px-6 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all duration-300 shadow-md hover:shadow-lg"
+                  className="w-full bg-[#093f74] text-white px-3 py-4 rounded-full font-semibold text-lg hover:bg-[#b11823] transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   Submit Booking Request
                 </button>

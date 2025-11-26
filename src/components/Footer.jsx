@@ -14,7 +14,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
+ <footer className="bg-[#0A2540] text-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {/* Brand Section */}
@@ -94,7 +94,7 @@ function Footer() {
                   key={index}
                   href={social.link}
                   aria-label={social.label}
-                  className="bg-gray-800 p-3 rounded-full hover:bg-blue-600 transition duration-300"
+                  className="bg-blue-600 p-3 rounded-full hover:bg-gray-600 transition duration-300"
                 >
                   {social.icon}
                 </a>
