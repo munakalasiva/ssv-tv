@@ -52,7 +52,7 @@ function Home() {
     const fetchGallery = async () => {
       try {
         const res = await API.get("/gallery");
-        setGalleryItems(res.data.data); // backend returns { success, data: [...] }
+        setGalleryItems(res.data?.data || []);
       } catch (error) {
         console.error("Gallery Fetch Error:", error);
       }
