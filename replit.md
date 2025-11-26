@@ -126,3 +126,12 @@ To deploy:
 - Authentication uses localStorage for token storage
 - The app uses responsive design with Tailwind CSS
 - Images and assets are stored in `src/assets/`
+
+## Standalone Mode (No Backend)
+When running without a backend API, the application will:
+- Display public pages (Home, About, Services, Warranty, Contact) with static content
+- Show "No gallery items found" on the Home page gallery section
+- Show "Loading services..." on the Services page
+- Log API errors to the console (expected behavior)
+- Contact form submissions will show success message but not actually send data
+- Admin login will not work without a backend authentication endpoint
