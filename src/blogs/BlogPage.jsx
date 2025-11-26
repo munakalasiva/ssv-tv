@@ -1,20 +1,37 @@
-// src/components/blogs/BlogPage.jsx
 import React, { useEffect, useState } from "react";
 import BlogList from "./BlogList";
-import BlogDetails from "./BlogDetails";
-import API from "../api"; // your axios instance
+import API from "../api";
+import blogsData from "./blogsData";
+
+const generateSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+};
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
-  const [selectedBlogId, setSelectedBlogId] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Fetch blogs from backend
   const fetchBlogs = async () => {
     try {
       const res = await API.get("/blogs");
-      setBlogs(res.data.blogs);
+      const apiBlogs = res.data.blogs || [];
+      const blogsWithSlugs = apiBlogs.map(blog => ({
+        ...blog,
+        slug: blog.slug || generateSlug(blog.title)
+      }));
+      setBlogs(blogsWithSlugs);
     } catch (error) {
       console.error("Error fetching blogs:", error);
+      const staticBlogsWithSlugs = blogsData.map(blog => ({
+        ...blog,
+        slug: generateSlug(blog.title)
+      }));
+      setBlogs(staticBlogsWithSlugs);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -22,49 +39,15 @@ const BlogPage = () => {
     fetchBlogs();
   }, []);
 
-  // Find selected blog
-  const selectedBlog = blogs.find((b) => b._id === selectedBlogId);
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
 
-  return (
-    <>
-      {selectedBlogId ? (
-        <BlogDetails
-          blog={selectedBlog}
-          onBack={() => setSelectedBlogId(null)}
-        />
-      ) : (
-        <BlogList blogs={blogs} onBlogClick={setSelectedBlogId} />
-      )}
-    </>
-  );
+  return <BlogList blogs={blogs} />;
 };
 
 export default BlogPage;
-
-
-
-
-
-// // src/components/blogs/BlogPage.jsx
-// import React, { useState } from "react";
-// import BlogList from "./BlogList";
-// import BlogDetails from "./BlogDetails";
-// import blogsData from "./blogsData";
-
-// const BlogPage = () => {
-//   const [selectedBlogId, setSelectedBlogId] = useState(null);
-
-//   const selectedBlog = blogsData.find((b) => b.id === selectedBlogId);
-
-//   return (
-//     <>
-//       {selectedBlogId ? (
-//         <BlogDetails blog={selectedBlog} onBack={() => setSelectedBlogId(null)} />
-//       ) : (
-//         <BlogList blogs={blogsData} onBlogClick={setSelectedBlogId} />
-//       )}
-//     </>
-//   );
-// };
-
-// export default BlogPage;

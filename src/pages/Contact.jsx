@@ -3,8 +3,15 @@ import { Phone, Mail, ThumbsUp, MapPin, Clock } from 'lucide-react';
 import contactBanner from "../assets/contact_banner.png";
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import API from "../api"; 
+import SEO, { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../components/SEO";
 
 export default function Contact() {
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteUrl },
+    { name: "Contact Us", url: `${siteUrl}/contact` }
+  ]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,24 +59,30 @@ const handleSubmit = async () => {
 
 
   return (
+    <>
+      <SEO
+        title="Contact Us | SSV Electronics - TV Repair Visakhapatnam"
+        description="Contact SSV Electronics for TV repair services in Visakhapatnam. Call +91-9291488856, visit our shop at MVP Colony, or reach us on WhatsApp for instant support."
+        keywords="contact SSV Electronics, TV repair contact, TV repair phone number Visakhapatnam, TV repair shop address, SSV Electronics location"
+        canonicalUrl="/contact"
+        schema={[breadcrumbSchema, generateLocalBusinessSchema()]}
+      />
+      <div>
+        <section
+          className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${contactBanner})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
 
-    <div>
-
-   <section
-  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
-  style={{ backgroundImage: `url(${contactBanner})` }}
->
-  <div className="absolute inset-0 bg-black/40"></div>
-
-  <div className="relative z-10 text-center text-white px-4">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">
-     Contact Us
-    </h1>
-    <p className="text-lg md:text-xl">
-       Get in touch with us for any queries or support
-    </p>
-  </div>
-</section>
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              Contact Us
+            </h1>
+            <p className="text-lg md:text-xl">
+              Get in touch with us for any queries or support
+            </p>
+          </div>
+        </section>
 
 
   <div className="min-h-screen flex items-center justify-center p-4 sm:p-8" style={{ background: '#ffffff' }}>
@@ -290,9 +303,8 @@ const handleSubmit = async () => {
         </div>
       </div>
     </div>
-
-    </div>
- 
+      </div>
+    </>
   );
 }
 

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FiCheckCircle, FiXCircle, FiSearch } from 'react-icons/fi';
 import warranty from "../assets/warranty.png";
 import Contact from "../components/Contact";
+import SEO, { generateBreadcrumbSchema } from "../components/SEO";
 
 
 
@@ -53,23 +54,38 @@ function Warranty() {
     window.open(brandUrls[selectedBrand], '_blank');
   };
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-<section
-  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
-  style={{ backgroundImage: `url(${warranty})` }}
->
-  <div className="absolute inset-0 bg-black/40"></div>
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteUrl },
+    { name: "Warranty", url: `${siteUrl}/warranty` }
+  ]);
 
-  <div className="relative z-10 text-center text-white px-4">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">
-      Warranty Services
-    </h1>
-    <p className="text-lg md:text-xl">
-  Check your warranty status or access manufacturer warranty information
-    </p>
-  </div>
-</section>
+  return (
+    <>
+      <SEO
+        title="TV Warranty Check | SSV Electronics Visakhapatnam"
+        description="Check your TV repair warranty status from SSV Electronics. Access manufacturer warranty information for Samsung, LG, Sony, Mi, Panasonic, OnePlus TVs."
+        keywords="TV warranty check, TV repair warranty, Samsung warranty, LG warranty, Sony warranty, Mi warranty, TV warranty status, Visakhapatnam"
+        canonicalUrl="/warranty"
+        schema={breadcrumbSchema}
+      />
+      <div className="min-h-screen bg-gray-50">
+        <section
+          className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${warranty})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              Warranty Services
+            </h1>
+            <p className="text-lg md:text-xl">
+              Check your warranty status or access manufacturer warranty information
+            </p>
+          </div>
+        </section>
 
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#fbf1e0]">
@@ -274,10 +290,9 @@ function Warranty() {
         </div>
       </section>
 
-<Contact/>      
-
-
- </div>
+      <Contact/>      
+    </div>
+    </>
   );
 }
 

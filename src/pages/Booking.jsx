@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle } from 'react-icons/fi';
 import contactBg from "../assets/contactus.png";
+import SEO, { generateBreadcrumbSchema } from "../components/SEO";
 
 import API from "../api"; 
 
@@ -100,24 +101,38 @@ const handleSubmit = async (e) => {
 
 
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-     
-    <section
-  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
-  style={{ backgroundImage: `url(${contactBg})` }}
->
-  <div className="absolute inset-0 bg-black/40"></div>
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteUrl },
+    { name: "Book Repair", url: `${siteUrl}/booking` }
+  ]);
 
-  <div className="relative z-10 text-center text-white px-4">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">
-      Book a Repair
-    </h1>
-    <p className="text-lg md:text-xl">
-      Fill out the form below and our team will contact you shortly
-    </p>
-  </div>
-</section>
+  return (
+    <>
+      <SEO
+        title="Book TV Repair Service | SSV Electronics Visakhapatnam"
+        description="Book your TV repair appointment online. Same-day doorstep service available in Visakhapatnam. Fast response, certified technicians, warranty on repairs."
+        keywords="book TV repair, TV repair appointment, doorstep TV service, same day TV repair, TV repair booking Visakhapatnam, schedule TV repair"
+        canonicalUrl="/booking"
+        schema={breadcrumbSchema}
+      />
+      <div className="min-h-screen bg-gray-50">
+        <section
+          className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${contactBg})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              Book a Repair
+            </h1>
+            <p className="text-lg md:text-xl">
+              Fill out the form below and our team will contact you shortly
+            </p>
+          </div>
+        </section>
 
 
 
@@ -309,6 +324,7 @@ const handleSubmit = async (e) => {
         </div>
       </section>
     </div>
+    </>
   );
 }
 

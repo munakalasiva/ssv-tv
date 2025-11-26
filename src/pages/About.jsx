@@ -3,8 +3,15 @@ import { FiAward, FiUsers, FiMapPin, FiClock } from 'react-icons/fi';
 import shopImage from "../assets/ssv-shop.jpg";
 import about from "../assets/about.png";
 import Contact from "../components/Contact"
+import SEO, { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../components/SEO";
 
 function About() {
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteUrl },
+    { name: "About Us", url: `${siteUrl}/about` }
+  ]);
   const stats = [
     { icon: FiClock, value: '10+', label: 'Years Experience' },
     { icon: FiUsers, value: '5000+', label: 'Happy Customers' },
@@ -14,22 +21,30 @@ function About() {
   
 
   return (
-    <div className="min-h-screen bg-gray-50">
-   <section
-  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
-  style={{ backgroundImage: `url(${about})` }}
->
-  <div className="absolute inset-0 bg-black/40"></div>
+    <>
+      <SEO
+        title="About Us | SSV Electronics - TV Repair Experts in Visakhapatnam"
+        description="Learn about SSV Electronics - Visakhapatnam's trusted TV repair service with 10+ years experience, 5000+ happy customers, and certified technicians. Quality repairs with warranty."
+        keywords="about SSV Electronics, TV repair company Visakhapatnam, TV repair experts, trusted TV service center, experienced TV technicians"
+        canonicalUrl="/about"
+        schema={[breadcrumbSchema, generateLocalBusinessSchema()]}
+      />
+      <div className="min-h-screen bg-gray-50">
+        <section
+          className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${about})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
 
-  <div className="relative z-10 text-center text-white px-4">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">
-    About Us
-    </h1>
-    <p className="text-lg md:text-xl">
-   Your trusted partner for TV repair services in Visakhapatnam
-    </p>
-  </div>
-</section>
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              About Us
+            </h1>
+            <p className="text-lg md:text-xl">
+              Your trusted partner for TV repair services in Visakhapatnam
+            </p>
+          </div>
+        </section>
 
 
        {/* <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -237,6 +252,7 @@ transition-all duration-300 cursor-pointer"
 <Contact/>
 
     </div>
+    </>
   );
 }
 

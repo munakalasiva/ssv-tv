@@ -23,6 +23,7 @@ import AdminBlogs from "./pages/admin/AdminBlogs";
 import AdminServices from "./pages/admin/AdminServices";
 
 import BlogPage from "./blogs/BlogPage";
+import BlogDetailPage from "./blogs/BlogDetailPage";
 
 // Protected Route Wrapper
 function ProtectedRoute({ children }) {
@@ -54,6 +55,7 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />
 
 
           {/* ---------- ADMIN ROUTES ---------- */}

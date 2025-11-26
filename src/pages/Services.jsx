@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 
 import { motion } from 'framer-motion';
-// import { Zap, Clock, Shield, MapPin } from 'lucide-react';
 import { FiMonitor, FiSmartphone, FiZap, FiTool, FiVolume2, FiHelpCircle  } from 'react-icons/fi';
 import ServiceCard from '../components/ServiceCard';
 import service_banner from "../assets/services.png";
+import SEO, { generateServiceSchema, generateBreadcrumbSchema } from "../components/SEO";
 
 import { Shield, Home, Zap, Users,MapPin, Settings, DollarSign, Clock, Sparkles } from 'lucide-react';
 
@@ -85,23 +85,40 @@ function Services() {
 ];
 
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-   <section
-  className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
-  style={{ backgroundImage: `url(${service_banner})` }}
->
-  <div className="absolute inset-0 bg-black/40"></div>
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: siteUrl },
+    { name: "Services", url: `${siteUrl}/services` }
+  ]);
 
-  <div className="relative z-10 text-center text-white px-4">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">
-    Our TV Repair Services
-    </h1>
-    <p className="text-lg md:text-xl">
-  We provide fast, reliable and affordable TV repair solutions at your doorstep.
-    </p>
-  </div>
-</section>
+  const servicesSchema = generateServiceSchema();
+
+  return (
+    <>
+      <SEO
+        title="TV Repair Services in Visakhapatnam | SSV Electronics"
+        description="Professional TV repair services for LED, LCD, Smart TV, OLED. Screen repair, motherboard repair, power supply fix, audio issues. Doorstep service with warranty. Call now!"
+        keywords="TV repair services, LED TV repair, LCD TV repair, Smart TV repair, OLED TV repair, screen repair, motherboard repair, power supply repair, doorstep TV service Visakhapatnam"
+        canonicalUrl="/services"
+        schema={[breadcrumbSchema, servicesSchema]}
+      />
+      <div className="min-h-screen bg-gray-50">
+        <section
+          className="relative w-full h-[280px] bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${service_banner})` }}
+        >
+          <div className="absolute inset-0 bg-black/40"></div>
+
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+              Our TV Repair Services
+            </h1>
+            <p className="text-lg md:text-xl">
+              We provide fast, reliable and affordable TV repair solutions at your doorstep.
+            </p>
+          </div>
+        </section>
 
 
        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -144,7 +161,6 @@ function Services() {
       </section>
 
 
-       <>
       <style>{`
         @keyframes spin-slow {
           from { transform: rotate(0deg); }
@@ -303,12 +319,10 @@ function Services() {
 
         </div>
       </section>
-    </>
 
-   <Contact/> 
-    
-
+      <Contact/> 
     </div>
+    </>
   );
 }
 

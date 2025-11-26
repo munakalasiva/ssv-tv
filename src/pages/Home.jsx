@@ -7,6 +7,7 @@ import { Clock, Users, Settings, DollarSign, Sparkles,Phone, MapPin} from 'lucid
 import TestimonialCard from '../components/TestimonialCard';
 import ssvvideo from "../assets/ssv_video.mp4";
 import GalleryCard from "../components/GalleryCard"
+import SEO, { generateLocalBusinessSchema } from "../components/SEO";
 
 // import ssvvideo from "../assets/ssv_video.mp4";
 import ssvImg from "../assets/ssv.jpg"; 
@@ -189,11 +190,18 @@ const brands = [
   //   }
   // ];
 
+  const localBusinessSchema = generateLocalBusinessSchema();
+
   return (
-    <div className="min-h-screen">
-      
-
-
+    <>
+      <SEO
+        title="SSV Electronics | Expert TV Repair Services in Visakhapatnam"
+        description="Professional TV repair services in Visakhapatnam. Fast, affordable repairs for Samsung, LG, Sony, Mi & all brands. Doorstep service with warranty. Call +91-9291488856"
+        keywords="TV repair Visakhapatnam, LED TV repair, Smart TV repair, TV service center, Samsung TV repair, LG TV repair, Sony TV repair, doorstep TV repair, TV repair near me"
+        canonicalUrl="/"
+        schema={localBusinessSchema}
+      />
+      <div className="min-h-screen">
 
 <section className="w-full py-8 px-4 md:px-8 bg-white">
   <div className="container mx-auto">
@@ -708,6 +716,7 @@ const brands = [
   <Contact/>
 
     </div>
+    </>
   );
 }
 

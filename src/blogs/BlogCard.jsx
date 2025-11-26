@@ -1,19 +1,25 @@
-// src/components/blogs/BlogCard.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 
+const generateSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+};
+
 const BlogCard = ({ blog, onClick }) => {
-  return (
-    <div
-      onClick={onClick}
-      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl 
-                 transition-all duration-300 cursor-pointer transform hover:-translate-y-2 group"
-    >
+  const slug = blog.slug || generateSlug(blog.title);
+  
+  const CardContent = () => (
+    <>
       <div className="relative overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
           className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
         />
 
         <div className="absolute top-4 left-4">
@@ -44,11 +50,33 @@ const BlogCard = ({ blog, onClick }) => {
 
         <p className="text-gray-600 mb-4 line-clamp-3">{blog.excerpt}</p>
 
-        <button className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2 group-hover:gap-3 transition-all">
+        <span className="text-blue-600 font-semibold hover:text-blue-700 flex items-center gap-2 group-hover:gap-3 transition-all">
           Read More <span className="group-hover:translate-x-1 transition-transform">→</span>
-        </button>
+        </span>
       </div>
-    </div>
+    </>
+  );
+
+  if (onClick) {
+    return (
+      <div
+        onClick={onClick}
+        className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl 
+                   transition-all duration-300 cursor-pointer transform hover:-translate-y-2 group"
+      >
+        <CardContent />
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      to={`/blog/${slug}`}
+      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl 
+                 transition-all duration-300 cursor-pointer transform hover:-translate-y-2 group block"
+    >
+      <CardContent />
+    </Link>
   );
 };
 
