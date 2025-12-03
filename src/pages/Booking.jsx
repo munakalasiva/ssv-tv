@@ -34,24 +34,6 @@ function Booking() {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('Form Data:', formData);
-  //   setSubmitted(true);
-  //   setTimeout(() => {
-  //     setSubmitted(false);
-  //     setFormData({
-  //       name: '',
-  //       phone: '',
-  //       address: '',
-  //       tvBrand: '',
-  //       problemType: '',
-  //       date: '',
-  //       time: '',
-  //       file: null,
-  //     });
-  //   }, 3000);
-  // };
 
 
 
@@ -101,7 +83,7 @@ const handleSubmit = async (e) => {
 
 
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteUrl },
@@ -113,7 +95,16 @@ const handleSubmit = async (e) => {
       <SEO
         title="Book TV Repair Service | SSV Electronics Visakhapatnam"
         description="Book your TV repair appointment online. Same-day doorstep service available in Visakhapatnam. Fast response, certified technicians, warranty on repairs."
-        keywords="book TV repair, TV repair appointment, doorstep TV service, same day TV repair, TV repair booking Visakhapatnam, schedule TV repair"
+         keywords="
+book TV repair Vizag, schedule TV repair service, doorstep TV repair booking Visakhapatnam, LED TV repair booking, Smart TV repair appointment, TV technician booking Vizag, book LED TV service online, same-day TV repair booking, emergency TV repair booking, fast TV repair appointment Vizag, book Smart TV technician, book LCD TV repair, instant TV repair booking Vizag, online TV repair service booking, home TV repair booking Vizag,
+TV repair in Lankelapalem, TV repair in Paravada, TV repair in Achutapuram, TV repair in Aganampudi, LED TV repair in PM Palem, TV repair in Gambheeram, TV repair in Sontyam, TV repair in Vepagunta, TV repair in Narava, TV repair in Pedagantyada, TV repair in Chintagatla, TV repair in Pedda Rushikonda, TV repair in Bavikonda, LED TV repair in Endada, TV repair in Isukathota, TV repair in Pandurangapuram, TV repair in Waltair Uplands, TV repair in Kommadi, TV repair in Pothinamallayya Palem, TV repair in Boyapalem, TV repair in Yellapuvanipalem,
+TV repair in Akkayyapalem, LED TV repair in Gajuwaka, TV repair in MVP Colony, TV repair in Seethammadhara, TV repair in Maddilapalem, TV repair in Dwaraka Nagar, TV repair in Asilmetta, TV repair in Jagadamba Junction, TV repair in Madhurawada, TV repair in Yendada, TV repair in Rushikonda, TV repair in Bheemili, TV repair in Kapuluppada, LED TV repair in Anandapuram, TV repair in Hanumanthavaka, TV repair in Madhavadhara, TV repair in Venkojipalem,
+TV repair in Siripuram, TV repair in Beach Road, TV repair in Lawson’s Bay Colony, TV repair in Kirlampudi Layout, TV repair in Kailasapuram, TV repair in NAD Junction, TV repair in NSTL, TV repair in BHPV,
+TV repair in Gajuwaka Steel Plant, TV repair in Sheela Nagar, TV repair in Kancharapalem, TV repair in Gopalapatnam, TV repair in Kurmannapalem, TV repair in Chinnamushidiwada, TV repair in Malkapuram, TV repair in Sagar Nagar,
+TV repair in Railway New Colony, TV repair in HB Colony, TV repair in Allipuram, TV repair in One Town, TV repair in Two Town, TV repair in Three Town, TV repair in Port Area, TV repair in Dabagardens, TV repair in Santhipuram, TV repair in Satyam Junction, TV repair in Balayya Sastry Layout, TV repair in Chinna Waltair,
+TV repair in China Gantyada, TV repair in Gnanapuram, TV repair in Kurusura, TV repair in Kondayyapalem, TV repair in Relli Veedhi, TV repair in Tallavalasa, TV repair in Padmanabham, TV repair in Thimmapuram, TV repair in Devada,
+online TV repair booking Vizag, book Smart TV repair Visakhapatnam, book LED TV repair Vizag, instant TV repair scheduling, emergency TV service booking, fast TV technician appointment, book doorstep TV repair service, book TV repair near me Vizag, trusted TV repair booking Visakhapatnam
+"
         canonicalUrl="/booking"
         schema={breadcrumbSchema}
       />

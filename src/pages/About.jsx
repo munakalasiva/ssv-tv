@@ -6,7 +6,7 @@ import Contact from "../components/Contact"
 import SEO, { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../components/SEO";
 
 function About() {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteUrl },
@@ -25,7 +25,14 @@ function About() {
       <SEO
         title="About Us | SSV Electronics - TV Repair Experts in Visakhapatnam"
         description="Learn about SSV Electronics - Visakhapatnam's trusted TV repair service with 10+ years experience, 5000+ happy customers, and certified technicians. Quality repairs with warranty."
-        keywords="about SSV Electronics, TV repair company Visakhapatnam, TV repair experts, trusted TV service center, experienced TV technicians"
+         keywords="
+TV repair experts Visakhapatnam, best TV repair technicians Vizag, experienced TV technicians, certified TV service engineers Vizag, trusted LED TV repair experts, Smart TV repair professionals Vizag, LCD TV specialists Visakhapatnam, top-rated TV service center Vizag, leading TV repair company Vizag, TV repair with 30 years experience,
+TV repair in NAD Junction, TV repair in MVP Colony, TV repair in Siripuram, TV repair in Beach Road, TV repair in Kirlampudi Layout, TV repair in Pedda Waltair, TV repair in Pandurangapuram, TV repair in Waltair Uplands, LED TV repair in Asilmetta, TV repair in Dwaraka Nagar, TV repair in Jagadamba Junction, TV repair in Akkayyapalem, TV repair in Maddilapalem, TV repair in Seethammadhara, TV repair in Hanumanthavaka, TV repair in Maddilapalem, Smart TV repair in Rushikonda, TV repair in Yendada, TV repair in Bheemili, LED TV repair in Kapuluppada, TV repair in Anandapuram, TV repair in PM Palem, TV repair in Kommadi, TV repair in Madhurawada, TV repair in Pendurthi, TV repair in Gajuwaka, TV repair in Gajuwaka Steel Plant, TV repair in Kancharapalem, LED TV repair in Sheela Nagar, TV repair in Gopalapatnam, TV repair in Kurmannapalem, TV repair in Chinnamushidiwada, TV repair in Malkapuram, LED TV repair in Simhachalam, Smart TV repair in Auto Nagar,
+TV repair in Pedagantyada, LED TV repair in Narava, Smart TV repair near Vepagunta, TV repair in Paravada, TV repair in Achutapuram, TV repair in Aganampudi, TV repair in Gambheeram, TV repair in Sontyam, LED TV repair in Lankelapalem, TV repair in Boyapalem, TV repair in Endada, TV repair in Thimmapuram, TV repair in Bavikonda,
+LED TV repair in Railway New Colony, LCD TV repair in HB Colony, TV repair in Allipuram, TV repair in One Town, TV repair in Two Town, TV repair in Three Town, Smart TV repair in Port Area, TV repair in Dabagardens, TV repair in Santhipuram, TV repair near Satyam Junction, LED TV repair in Balayya Sastry Layout, TV repair in Chinna Waltair,
+TV service center in Gnanapuram, TV repair in China Gantyada, TV repair in Kurusura, TV repair in Kondayyapalem, LED TV repair in Relli Veedhi, TV repair in Tallavalasa, TV repair in Padmanabham, TV repair in Devada, Smart TV repair near Kothavalasa, LED TV repair in Ukkunagaram,
+experienced TV repair Akkayyapalem, trusted LED TV repair Gajuwaka, expert TV repair Madhurawada, certified TV repair Pendurthi, senior TV technicians Vizag, professional TV service Visakhapatnam, high-rated TV repair center Vizag, verified TV repair technicians Visakhapatnam
+"
         canonicalUrl="/about"
         schema={[breadcrumbSchema, generateLocalBusinessSchema()]}
       />
@@ -47,51 +54,6 @@ function About() {
         </section>
 
 
-       {/* <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-            <p className="text-gray-700 mb-4 leading-relaxed" style={{ textAlign: 'justify' }}>
-              Founded over a decade ago, TV Repair Services has been serving the people of Visakhapatnam and surrounding areas with dedication and expertise. What started as a small repair shop has grown into one of the most trusted names in TV repair services.
-            </p>
-            <p className="text-gray-700 mb-4 leading-relaxed" style={{ textAlign: 'justify' }}>
-              Our team of certified technicians brings years of experience and technical knowledge to every repair job. We understand how important your TV is to your daily life, and we're committed to getting it back to you as quickly as possible.
-            </p>
-              <p className="text-gray-700 mb-4 leading-relaxed" style={{ textAlign: 'justify' }}>
-              We believe that every repair is more than just fixing a device—it’s restoring a part of your daily life. Whether it’s a family movie night, a cricket match with friends, or your child’s favorite cartoon, we know how much those moments matter. That’s why we treat every job with urgency, precision, and care.
-            </p>
-            <p className="text-gray-700 leading-relaxed" style={{ textAlign: 'justify' }}>
-              We pride ourselves on using only genuine parts, transparent pricing, and providing exceptional customer service. Our mission is simple: to deliver fast, reliable, and affordable TV repair solutions that exceed your expectations.
-            </p>
-          </motion.div>
-
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center"
-          >
-            <img
-              src={storyImage}
-              alt="Technician repairing TV"
-              className="rounded-2xl shadow-lg w-full max-w-md lg:max-w-full h-auto object-cover"
-              style={{ maxHeight: '480px' }}
-            />
-          </motion.div>
-
-        </div>
-      </div>
-    </section> */}
 
     
   <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">

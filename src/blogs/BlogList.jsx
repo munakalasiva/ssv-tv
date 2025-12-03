@@ -4,7 +4,7 @@ import blogImg from "../assets/blog.jpg";
 import SEO, { generateBreadcrumbSchema } from "../components/SEO";
 
 const BlogList = ({ blogs, onBlogClick }) => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteUrl },
@@ -35,7 +35,16 @@ const BlogList = ({ blogs, onBlogClick }) => {
       <SEO
         title="TV Repair Blog | Expert Tips & Guides | SSV Electronics"
         description="Read expert tips, troubleshooting guides, and solutions for all your TV repair needs. Learn about LED TV problems, smart TV fixes, and more from SSV Electronics."
-        keywords="TV repair blog, LED TV troubleshooting, smart TV tips, TV repair guide, TV problems solutions, Visakhapatnam TV repair"
+         keywords="
+TV repair tips, Smart TV repair tips, LED TV troubleshooting guide, LCD TV troubleshooting, common TV problems and fixes, TV screen issues explained, TV display troubleshooting, TV backlight failure guide, TV motherboard issues guide, sound problem in TV fix, TV won’t turn on solutions, how to fix TV no picture, TV technical articles, TV repair blog Vizag, Smart TV guide Visakhapatnam, LED TV maintenance tips,
+TV repair in Aganampudi, LED TV repair in PM Palem, Smart TV repair in Gambheeram, TV repair in Sontyam, TV repair in Vepagunta, TV repair in Narava, TV repair in Pedagantyada, LED TV repair in Chintagatla, TV repair in Pedda Rushikonda, TV repair in Bavikonda, TV repair in Endada, TV repair in Isukathota, TV repair in Pandurangapuram, TV repair in Waltair Uplands, TV repair in Kommadi, TV repair in Pothinamallayya Palem, TV repair in Boyapalem, TV repair in Yellapuvanipalem,
+TV repair in Madhurawada, TV repair in Yendada, LED TV repair in Rushikonda, TV repair in Bheemili, LED TV repair in Kapuluppada, TV repair in Anandapuram, TV repair in Hanumanthavaka, TV repair in Madhavadhara, TV repair in Venkojipalem, TV repair in Siripuram, TV repair in Beach Road, TV repair in Lawson’s Bay Colony, TV repair in Kirlampudi Layout,
+TV repair in Dabagardens, TV repair in Port Area, Smart TV repair in Satyam Junction, TV repair in Santhipuram, TV repair in Balayya Sastry Layout, TV repair in Chinna Waltair, LED TV repair in Railway New Colony, TV repair in HB Colony, TV repair in Allipuram, TV repair in One Town, TV repair in Two Town, TV repair in Three Town,
+TV repair in Kurmannapalem, TV repair in Gopalapatnam, LED TV repair in Kancharapalem, TV repair in Gajuwaka, TV repair in Sheela Nagar, TV repair in Auto Nagar, TV repair in Gajuwaka Steel Plant, TV repair in Chinnamushidiwada, TV repair in Malkapuram, TV repair in Pendurthi,
+TV repair in Akkayyapalem, TV repair in Maddilapalem, LED TV repair in MVP Colony, TV repair in Seethammadhara, TV repair in Dwaraka Nagar, TV repair in Asilmetta, TV repair in Jagadamba Junction, TV repair in NAD Junction, TV repair in NSTL, TV repair in BHPV,
+TV repair in China Gantyada, TV repair in Gnanapuram, TV repair in Kurusura, TV repair in Kondayyapalem, TV repair in Relli Veedhi, Smart TV repair near Kothavalasa, TV repair in Tallavalasa, TV repair in Padmanabham, LED TV repair in Thimmapuram, TV repair in Devada,
+TV service knowledge Vizag, TV repair tutorials Vizag, Smart TV problem-solving guides, LED TV educational blogs, TV repair case studies Vizag, best TV repair blog Vizag, TV service awareness articles, professional TV repair tips, expert TV service insights, TV knowledge hub Visakhapatnam
+"
         canonicalUrl="/blogs"
         schema={[breadcrumbSchema, blogListSchema]}
       />

@@ -85,7 +85,7 @@ function Services() {
 ];
 
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteUrl },
@@ -99,7 +99,8 @@ function Services() {
       <SEO
         title="TV Repair Services in Visakhapatnam | SSV Electronics"
         description="Professional TV repair services for LED, LCD, Smart TV, OLED. Screen repair, motherboard repair, power supply fix, audio issues. Doorstep service with warranty. Call now!"
-        keywords="TV repair services, LED TV repair, LCD TV repair, Smart TV repair, OLED TV repair, screen repair, motherboard repair, power supply repair, doorstep TV service Visakhapatnam"
+         keywords="LED TV repair services, LCD TV repair Vizag, Smart TV repair Vizag, TV motherboard repair, TV backlight repair, TV screen replacement, TV power issue repair, TV sound problem repair, TV display problem repair, Android TV repair Vizag, 4K TV repair service, QLED TV repair, OLED TV repair Vizag, home TV service Vizag, doorstep TV repair, TV technician services, TV installation Vizag, TV uninstallation service, TV HDMI port repair, TV button repair, TV WiFi issue repair, TV color problem repair, screen flickering fix, TV vertical lines fix, TV horizontal lines fix, TV reboot issue fix,
+TV repair in Maddilapalem, LED TV repair in Dwaraka Nagar, TV repair in Asilmetta, TV repair in Siripuram, TV repair in Beach Road, TV repair in MVP Colony, TV repair in Jagadamba Junction, TV repair in Gajuwaka, TV repair in NAD Junction, TV repair in Seethammadhara, TV service center in PM Palem, TV repair in Pendurthi, LED TV repair in Kancharapalem, TV repair in Gopalapatnam, TV repair in Sheela Nagar, TV repair in Anandapuram, TV repair in Madhurawada, TV repair in Yendada, TV repair in Rushikonda, TV repair in Bheemili, TV repair in Hanumanthavaka, TV repair in Madhavadhara, TV repair in Sagar Nagar, TV repair in Pedagantyada, TV repair in Simhachalam, TV repair in Venkojipalem, TV repair in Kommadi, TV repair in Boyapalem, TV repair in Santhipuram, TV repair in Port Area, TV repair in Dabagardens, TV repair in One Town, TV repair in Two Town, TV repair in Three Town, TV repair in HB Colony, TV repair in Railway New Colony, TV repair in Allipuram, TV repair in Thatichetlapalem, TV repair in Gnanapuram, TV repair in Waltair Uplands, TV repair in Balayya Sastry Layout, TV repair in China Gantyada, TV repair in Kondayyapalem, TV repair in Steel Plant Township, TV repair in Ukkunagaram, TV repair in Kirlampudi Layout, TV repair in Kailasapuram, TV repair in Kottavalasa, TV repair in Relli Veedhi, TV repair in Kasimkota, TV repair in Padmanabham, TV repair in Tallavalasa, TV repair in Thimmapuram, TV repair in Devada, TV repair in Sontyam, TV repair in Paravada, TV repair in Achutapuram, TV repair in Narava, TV repair in Vepagunta, TV repair in Lankelapalem"
         canonicalUrl="/services"
         schema={[breadcrumbSchema, servicesSchema]}
       />

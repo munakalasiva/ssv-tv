@@ -2,15 +2,12 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiClock, FiTool,FiUsers, FiSettings, FiDollarSign,FiShield,FiPhone,FiMapPin, FiCheckCircle } from 'react-icons/fi';
+
 import { Clock, Users, Settings, DollarSign, Sparkles,Phone, MapPin} from 'lucide-react';
 import TestimonialCard from '../components/TestimonialCard';
 import ssvvideo from "../assets/ssv_video.mp4";
 import GalleryCard from "../components/GalleryCard"
 import SEO, { generateLocalBusinessSchema } from "../components/SEO";
-
-// import ssvvideo from "../assets/ssv_video.mp4";
-import ssvImg from "../assets/ssv.jpg"; 
 
 import samsung from "../assets/samsung.png";
 import lg from "../assets/lg_logo.png";
@@ -22,14 +19,6 @@ import oneplus from "../assets/oneplus-logo-png-transparent.png";
 import vu from "../assets/Vu_Televisions.png";
 import tcl from "../assets/tcl_logo.png"
 
-
-//* gallery photos
-// import gry1 from "../assets/IMG20251114114227.jpg"
-// import gry2 from "../assets/IMG20251114114656.jpg"
-// import gry3 from "../assets/IMG20251114114845.jpg"
-// import gry5 from "../assets/IMG20251114120224.jpg"
-// import gry4 from "../assets/IMG20251114114946.jpg"
-// import gry6 from "../assets/IMG20251114115008.jpg"
 
 import footer_ban from "../assets/footer_banner.png";
 
@@ -157,38 +146,6 @@ const brands = [
     { value: '50+', label: 'Areas Covered' },
   ];
 
-  //   const galleryItems = [
-  //   {
-  //     image: gry1,
-  //     title: 'LED TV Screen Replacement',
-  //     description: 'Professional screen replacement service for all LED TV brands'
-  //   },
-  //   {
-  //     image: gry2,
-  //     title: 'Smart TV Software Update',
-  //     description: 'Firmware updates and smart TV troubleshooting'
-  //   },
-  //   {
-  //     image:gry3,
-  //     title: 'Power Supply Repair',
-  //     description: 'Expert repair of TV power boards and components'
-  //   },
-  //   {
-  //     image: gry4,
-  //     title: 'HDMI Port Replacement',
-  //     description: 'Fix damaged HDMI ports and connectivity issues'
-  //   },
-  //   {
-  //     image: gry5,
-  //     title: 'TV Mounting Service',
-  //     description: 'Professional wall mounting and setup services'
-  //   },
-  //   {
-  //     image: gry6,
-  //     title: 'Home Theater Setup',
-  //     description: 'Complete home entertainment system installation'
-  //   }
-  // ];
 
   const localBusinessSchema = generateLocalBusinessSchema();
 
@@ -197,7 +154,8 @@ const brands = [
       <SEO
         title="SSV Electronics | Expert TV Repair Services in Visakhapatnam"
         description="Professional TV repair services in Visakhapatnam. Fast, affordable repairs for Samsung, LG, Sony, Mi & all brands. Doorstep service with warranty. Call +91-9291488856"
-        keywords="TV repair Visakhapatnam, LED TV repair, Smart TV repair, TV service center, Samsung TV repair, LG TV repair, Sony TV repair, doorstep TV repair, TV repair near me"
+         keywords="TV repair Visakhapatnam, LED TV repair, Smart TV repair, LCD TV repair, Plasma TV repair, TV service center Visakhapatnam, doorstep TV repair service, TV repair near me, TV technician Visakhapatnam, TV wall mounting service Vizag, Samsung TV repair, LG TV repair, Sony TV repair, Mi TV repair, TCL TV repair, Panasonic TV repair, Hisense TV repair, Vu TV repair, Onida TV repair, TV screen repair Vizag, TV display issue fix, TV motherboard repair Visakhapatnam, TV backlight repair Vizag, TV sound issue repair, no picture issue repair, TV power issue repair, home TV repair service, emergency TV repair Vizag, affordable TV repair, certified TV technicians Vizag, TV installation Visakhapatnam, TV calibration service Vizag,
+TV repair in Akkayyapalem, LED TV repair in Gajuwaka, TV repair in MVP Colony, TV repair in Seethammadhara, TV repair in Maddilapalem, TV repair in Dwaraka Nagar, LED TV repair in Asilmetta, TV service center in Jagadamba Junction, TV repair in Madhurawada, Smart TV repair near Yendada, TV repair in Rushikonda, LED TV repair in Bheemili, TV repair in Pendurthi, TV repair in Kurmannapalem, Smart TV repair near Duvvada, TV repair in Gopalapatnam, TV repair in Kancharapalem, TV service center in Arilova, TV repair in Simhachalam, TV repair in Auto Nagar, TV repair in Gajuwaka Steel Plant, TV repair in Sheela Nagar, TV repair in Chinnamushidiwada, TV repair in Malkapuram, TV repair in Anandapuram, TV repair in Hanumanthavaka, TV repair in Madhavadhara, TV repair in Venkojipalem, TV repair near Pedda Waltair, TV repair in Siripuram, TV repair in Beach Road, LED TV repair in Lawsons Bay, TV repair in Kirlampudi Layout, TV repair in Kailasapuram, TV repair in NAD Junction, TV repair in NSTL, TV repair in BHPV, TV repair in Bheemunipatnam, TV repair in Kapuluppada, TV repair in Sagar Nagar, TV repair in Thatichetlapalem, TV repair in Allipuram, TV repair in Poorna Market, TV repair in Town Kotha Road, TV repair in Railway New Colony, TV repair in HB Colony, TV repair in Lankelapalem, TV repair in Paravada, TV repair in Achutapuram, TV repair in Aganampudi, TV repair in PM Palem, TV repair in Gambheeram, TV repair in Sontyam, TV repair in Vepagunta, TV repair in Narava, TV repair in Pedagantyada, TV repair in Chintagatla, TV repair in Pedda Rushikonda, TV repair in Kothavalasa, TV repair in Bavikonda, TV repair in Endada, TV repair in Isukathota, TV repair in Pandurangapuram, TV repair in Waltair Uplands, TV repair in Kommadi, TV repair in Pothinamallayya Palem, TV repair in Boyapalem, TV repair in Yellapuvanipalem, TV repair in Satyam Junction, TV repair in RTC Complex, TV repair in Chinna Waltair, TV repair in Balayya Sastry Layout, TV repair in Santhipuram, TV repair in Dabagardens, TV repair in Port Area, TV repair in One Town, TV repair in Two Town, TV repair in Three Town, TV repair in Dept Colony, TV repair in Ukkunagaram, TV repair in Kottavalasa, TV repair in Relli Veedhi, TV repair in China Gantyada, TV repair in Gnanapuram, TV repair in Kurusura, TV repair in Kondayyapalem, TV repair in Steel Plant Township, TV repair in Kasimkota, TV repair in Padmanabham, TV repair in Tallavalasa, TV repair in Thimmapuram, TV repair in Devada, TV repair near Mindi"
         canonicalUrl="/"
         schema={localBusinessSchema}
       />

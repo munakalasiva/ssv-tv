@@ -39,6 +39,11 @@ function AdminNavbar() {
           Booking Form
         </NavLink>
 
+        
+        <NavLink to="/admin/dashboard/warranty" className={linkClasses}>
+          Warranty 
+        </NavLink>
+
         {/* ---------------------- WCM SECTION ---------------------- */}
         <h2 className="text-sm text-gray-400 uppercase tracking-wider mt-6 pl-3">
           Website Content Management

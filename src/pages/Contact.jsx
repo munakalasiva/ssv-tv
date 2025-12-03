@@ -6,7 +6,7 @@ import API from "../api";
 import SEO, { generateLocalBusinessSchema, generateBreadcrumbSchema } from "../components/SEO";
 
 export default function Contact() {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteUrl },
@@ -63,8 +63,14 @@ const handleSubmit = async () => {
       <SEO
         title="Contact Us | SSV Electronics - TV Repair Visakhapatnam"
         description="Contact SSV Electronics for TV repair services in Visakhapatnam. Call +91-9291488856, visit our shop at MVP Colony, or reach us on WhatsApp for instant support."
-        keywords="contact SSV Electronics, TV repair contact, TV repair phone number Visakhapatnam, TV repair shop address, SSV Electronics location"
-        canonicalUrl="/contact"
+         keywords="
+TV repair contact Visakhapatnam, TV service phone number Vizag, LED TV repair contact, Smart TV repair helpline Vizag, contact TV technician Visakhapatnam, TV repair support Vizag, TV service center number, call TV repair service Vizag, contact LED TV service, book TV repair Vizag, call technician for TV repair,
+TV repair in Sheela Nagar, LED TV repair in Kancharapalem, TV repair in Malkapuram, TV repair in Gopalapatnam, TV repair in Kurmannapalem, Smart TV repair in NAD Junction, TV repair in Gajuwaka, TV repair in Akkayyapalem, TV repair in Seethammadhara, TV repair in Maddilapalem, TV repair in Dwaraka Nagar, TV repair in Asilmetta, TV repair in MVP Colony, TV repair in Jagadamba Junction, LED TV repair in Madhurawada, TV repair in Yendada, TV repair in Rushikonda, LED TV repair in Bheemili, LED TV repair in Kapuluppada, TV repair in Anandapuram, TV repair in PM Palem, TV repair in Kommadi, TV repair in Hanumanthavaka, TV repair in Madhavadhara, TV repair in Venkojipalem, TV repair in Siripuram, TV repair in Beach Road, TV repair in Pedda Waltair, TV repair in Kirlampudi Layout, TV repair in Waltair Uplands, TV repair in Pandurangapuram,
+TV repair in Pendurthi, TV repair in Steel Plant Township, TV repair in Chinnamushidiwada, TV repair in Auto Nagar, TV repair in Gajuwaka Steel Plant, TV repair in Chinna Waltair, TV repair in Boyapalem, TV repair in Lankelapalem, TV repair in Paravada, TV repair in Achutapuram, TV repair in Aganampudi, TV repair in Sontyam, TV repair in Sagar Nagar, TV repair in Bavikonda, LED TV repair in Endada, TV repair in Thimmapuram,
+TV repair in Railway New Colony, TV repair in HB Colony, TV repair in Allipuram, TV repair in One Town, TV repair in Two Town, TV repair in Three Town, TV repair in Port Area, TV repair in Dabagardens, TV repair in Santhipuram, TV repair in Satyam Junction, TV repair in Balayya Sastry Layout,
+TV repair in China Gantyada, TV repair in Gnanapuram, TV repair in Kurusura, TV repair in Kondayyapalem, TV repair in Relli Veedhi, TV repair in Padmanabham, Smart TV repair near Kothavalasa, TV repair in Tallavalasa, LED TV repair in Devada, TV repair near Mindi,
+contact TV repair Akkayyapalem, contact LED TV repair Gajuwaka, contact Smart TV repair Madhurawada, book TV repair Pendurthi, TV repair call support Vizag, call LED TV repair Rushikonda, book Smart TV technician Bheemili, TV repair hotline Vizag, TV repair customer care Vizag, instant TV repair contact, emergency TV repair Visakhapatnam
+"
         schema={[breadcrumbSchema, generateLocalBusinessSchema()]}
       />
       <div>

@@ -11,7 +11,7 @@ const SEO = ({
   schema,
   noIndex = false,
 }) => {
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   const fullCanonicalUrl = canonicalUrl ? `${siteUrl}${canonicalUrl}` : (typeof window !== 'undefined' ? window.location.href : siteUrl);
   const defaultImage = `${siteUrl}/og-image.png`;
 
@@ -51,7 +51,7 @@ export const generateLocalBusinessSchema = () => ({
   "@type": "LocalBusiness",
   "name": "SSV Electronics - TV Repair Services",
   "description": "Professional TV repair services in Visakhapatnam. Expert technicians for all brands - Samsung, LG, Sony, Mi, and more.",
-  "url": "https://ssvelectronics.com",
+  "url": "https://ssvelectronicsvizag.com",
   "telephone": "+91-9291488856",
   "address": {
     "@type": "PostalAddress",
@@ -75,10 +75,10 @@ export const generateLocalBusinessSchema = () => ({
     }
   ],
   "priceRange": "$$",
-  "image": "https://ssvelectronics.com/og-image.png",
+  "image": "https://ssvelectronicsvizag.com/ssv-logo.png",
   "sameAs": [
-    "https://www.facebook.com/ssvelectronics",
-    "https://www.instagram.com/ssvelectronics"
+    "https://www.facebook.com/profile.php?id=61584061136849",
+    "https://www.instagram.com/ssvelectronicsvizag"
   ]
 });
 

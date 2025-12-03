@@ -21,6 +21,7 @@ import AdminGallery from './pages/admin/AdminGallery';
 import AdminWelcome from "./pages/admin/AdminWelcome";
 import AdminBlogs from "./pages/admin/AdminBlogs";
 import AdminServices from "./pages/admin/AdminServices";
+import AdminWarranty from "./pages/admin/AdminWarranty";
 
 import BlogPage from "./blogs/BlogPage";
 import BlogDetailPage from "./blogs/BlogDetailPage";
@@ -78,6 +79,7 @@ function AppContent() {
             <Route path="gallery" element={<AdminGallery />} />
             <Route path="blogs" element={<AdminBlogs/>}/>
               <Route path="services" element={<AdminServices/>}/>
+              <Route path="warranty" element={<AdminWarranty/>}/>
           </Route>
 
         </Routes>

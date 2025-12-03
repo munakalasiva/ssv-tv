@@ -66,7 +66,7 @@ const BlogDetailPage = () => {
     );
   }
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronics.com';
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://ssvelectronicsvizag.com';
   
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: "Home", url: siteUrl },
@@ -91,12 +91,19 @@ const BlogDetailPage = () => {
     window.open(shareUrls[platform], '_blank', 'width=600,height=400');
   };
 
+  const cleanKeywords = blog.keywords
+  .split(",")
+  .map(k => k.trim())
+  .join(", ");
+
+
   return (
     <>
+
       <SEO
         title={`${blog.title} | SSV Electronics Blog`}
         description={blog.excerpt}
-        keywords={`${blog.category}, TV repair, ${blog.title.split(' ').slice(0, 5).join(', ')}, Visakhapatnam`}
+        keywords={cleanKeywords}
         canonicalUrl={`/blog/${blog.slug}`}
         ogImage={blog.image}
         ogType="article"

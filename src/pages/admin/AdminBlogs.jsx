@@ -10,11 +10,12 @@ function AdminBlogs() {
     date: "",
     excerpt: "",
     content: "",
+    keywords:"",
   });
 
   const [blogs, setBlogs] = useState([]);
   const [editId, setEditId] = useState(null); // ⬅ EDIT MODE FLAG
-
+  console.log(blogs);
   const fetchBlogs = async () => {
     const res = await API.get("/blogs");
     setBlogs(res.data.blogs);
@@ -36,7 +37,7 @@ function AdminBlogs() {
     data.append("date", form.date);
     data.append("excerpt", form.excerpt);
     data.append("content", form.content);
-
+     data.append("keywords", form.keywords);
     if (file) data.append("image", file);
 
     try {
@@ -58,6 +59,7 @@ function AdminBlogs() {
         date: "",
         excerpt: "",
         content: "",
+        keywords:"",
       });
       setFile(null);
       setEditId(null);
@@ -89,6 +91,7 @@ function AdminBlogs() {
       date: blog.date,
       excerpt: blog.excerpt,
       content: blog.content,
+      keywords:blog.keywords,
     });
 
     setFile(null); // optional: user can upload new image
@@ -99,81 +102,6 @@ function AdminBlogs() {
     <div className="p-6">
       <h1 className="text-2xl font-semibold mb-4">Blogs Admin</h1>
 
-      {/* Blog Form */}
-      {/* <form onSubmit={handleSubmit} className="space-y-4 max-w-3xl">
-        <input
-          type="text"
-          className="w-full border p-2 rounded"
-          placeholder="Blog Title"
-          value={form.title}
-          onChange={(e) => setForm({ ...form, title: e.target.value })}
-          required
-        />
-
-        <input
-          type="text"
-          className="w-full border p-2 rounded"
-          placeholder="Category"
-          value={form.category}
-          onChange={(e) => setForm({ ...form, category: e.target.value })}
-          required
-        />
-
-        <input
-          type="date"
-          className="w-full border p-2 rounded"
-          value={form.date}
-          onChange={(e) => setForm({ ...form, date: e.target.value })}
-          required
-        />
-
-      
-        <div className="flex flex-col gap-3">
-          <label className="font-medium text-gray-700">
-            {editId ? "Update Blog Image (Optional)" : "Upload Blog Image"}
-          </label>
-
-          <div className="flex items-center gap-4">
-            <label
-              htmlFor="blogFile"
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition"
-            >
-              Choose File
-            </label>
-
-            <span className="text-gray-600 text-sm">
-              {file ? file.name : "No file chosen"}
-            </span>
-          </div>
-
-          <input
-            id="blogFile"
-            type="file"
-            className="hidden"
-            onChange={(e) => setFile(e.target.files[0])}
-          />
-        </div>
-
-        <textarea
-          className="w-full border p-2 rounded"
-          placeholder="Excerpt"
-          value={form.excerpt}
-          onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
-          required
-        />
-
-        <textarea
-          className="w-full border p-2 rounded h-40"
-          placeholder="Content"
-          value={form.content}
-          onChange={(e) => setForm({ ...form, content: e.target.value })}
-          required
-        />
-
-        <button className="bg-green-600 text-white px-4 py-2 rounded">
-          {editId ? "Update Blog" : "Add Blog"}
-        </button>
-      </form> */}
       <form onSubmit={handleSubmit} className="max-w-2xl space-y-3 p-4">
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -248,6 +176,16 @@ function AdminBlogs() {
     onChange={(e) => setForm({ ...form, content: e.target.value })}
     required
   />
+ 
+  <textarea 
+  placeholder="Meta Keywords (comma separated)"
+  value={form.keywords}
+  onChange={(e) => setForm({ ...form, keywords: e.target.value })}
+  rows={2}
+  className="w-full border p-2 rounded text-sm"
+/>
+
+
 
   <button className="bg-green-600 text-white px-4 py-2 rounded">
     {editId ? "Update Blog" : "Add Blog"}
@@ -269,7 +207,7 @@ function AdminBlogs() {
               {blog.category} • {blog.date}
             </p>
             <p className="text-sm mt-2 text-gray-700">{blog.excerpt}</p>
-
+       
             <div className="flex justify-between mt-3">
   <button
     onClick={() => editBlog(blog)}
